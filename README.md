@@ -34,7 +34,7 @@ Run the project
 ```shell
 cargo run --release -- -i <FILE>
 # or run use the repl
-cargo run --realease --
+cargo run --release --
 ```
 
 ## Example
