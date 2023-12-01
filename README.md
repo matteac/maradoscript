@@ -21,7 +21,7 @@ If the pointer is at zero and you try to decrement it, it will go to the last by
 - i - moves the pointer backward 
 - m - increments the value at the pointer 
 - a - decrements the value at the pointer
-- 👍 - outputs the value at the pointer to the stdout
+- 👍 - prints the value at the pointer to the stdout
 -   (space) - takes an ASCII character from the stdin and stores it at the pointer
 
 
