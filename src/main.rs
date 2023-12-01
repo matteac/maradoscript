@@ -1,10 +1,9 @@
 mod internal;
 mod parser;
-use std::path::PathBuf;
-
-use internal::Runtime;
 
 use clap::Parser;
+use internal::Runtime;
+use std::path::PathBuf;
 
 #[derive(Debug, Parser)]
 struct Cli {
