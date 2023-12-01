@@ -45,7 +45,7 @@ impl Program {
         // this is only to bother people
         Err(std::io::Error::new(
                 std::io::ErrorKind::Other,
-                "Memory set to None, you cannot decrement from it. Try to increment the value to set to zero."
+                "Memory set to None, you cannot decrement from it. Try to increment the value to set to one and then decrement."
         ))
     }
 

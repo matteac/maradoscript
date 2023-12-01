@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use crate::parser::{Instruction, Parser};
 
 use super::Program;
@@ -16,6 +18,10 @@ impl Runtime {
             parser: Parser::new(),
             instructions: Vec::new(),
         }
+    }
+    pub fn run_file(&mut self, path: PathBuf) {
+        let input = std::fs::read_to_string(path).unwrap();
+        self.run(input);
     }
     pub fn run(&mut self, input: String) {
         self.instructions = self.parser.parse(input);
