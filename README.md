@@ -1,3 +1,7 @@
+![Logo](images/maradona.jpeg)
+
+
+
 # MaradoScript
 Inspired by Brainfuck and Maradona written in Rust
 
