@@ -6,7 +6,7 @@
 
 
 # MaradoScript
-Inspired by Brainfuck and Maradona written in Rust
+Inspired by Brainfuck and Maradona, written in Rust (btw)
 
 ## How it works
 It has a memory of 2^16 bytes and a pointer that points to the current byte, you can move the pointer forward or backward and increment or decrement the value at the pointer, print to the stdout and take input
