@@ -33,7 +33,7 @@ cargo build --release
 Run the project
 ```shell
 cargo run --release -- -i <FILE>
-# or use the repl
+# or run use the repl
 cargo run --release --
 ```
 
