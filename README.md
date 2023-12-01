@@ -23,24 +23,24 @@ Unfettered by loops.
 - 👍 - prints the value at the pointer to the stdout
 - ' ' (space) - takes an ASCII character from the stdin and stores it at the pointer
 
-
-## Usage
-Clone the repo
+## Installation
 ```shell
 git clone https://github.com/matteac/maradoscript.git
+cd maradoscript
+cargo install --path .
 ```
-Build the project
+
+## Usage
 ```shell
-cargo build --release
-```
-Run the project
-```shell
-cargo run --release -- -i <FILE>
+maradoscript -i <FILE>
 ```
 Or use the repl
 ```shell
-cargo run --release --
+maradoscript
 ```
+
+## Transpile
+Read the [transpiler](https://github.com/matteac/maradoscript_transpiler) documentation
 
 ## Example
 The following code prints `Hello World`:
