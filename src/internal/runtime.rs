@@ -1,57 +1,52 @@
-use std::io::{Read, Write};
+use crate::parser::{Instruction, Parser};
+
+use super::Program;
 
 pub struct Runtime {
-    pub memory: [Option<u8>; 65536],
-    pub pointer: usize,
+    program: Program,
+    parser: Parser,
+    instructions: Vec<Instruction>,
 }
 
 #[allow(dead_code)]
 impl Runtime {
     pub fn new() -> Self {
         Self {
-            memory: [None; 65536],
-            pointer: 0,
+            program: Program::new(),
+            parser: Parser::new(),
+            instructions: Vec::new(),
         }
     }
-    pub fn move_backward(&mut self) {
-        if self.pointer == 0 {
-            // note: underflow is a feature!
-            self.pointer = self.memory.len() - 1;
-            return;
+    pub fn run(&mut self, input: String) {
+        self.instructions = self.parser.parse(input);
+        for instruction in self.instructions.iter() {
+            match instruction {
+                Instruction::Increment => {
+                    self.program.increment();
+                }
+                Instruction::Decrement => match self.program.decrement() {
+                    Ok(_) => {}
+                    Err(e) => {
+                        eprintln!("Illegal instruction: {}", e);
+                    }
+                },
+                Instruction::MoveForward => {
+                    self.program.move_forward();
+                }
+                Instruction::MoveBackward => {
+                    self.program.move_backward();
+                }
+                Instruction::Output => {
+                    self.program.print();
+                }
+                Instruction::Input => {
+                    self.program.input();
+                }
+                Instruction::Illegal => {
+                    eprintln!("Illegal instruction, program terminated.");
+                    std::process::exit(1);
+                }
+            }
         }
-        self.pointer -= 1;
-    }
-    pub fn move_forward(&mut self) {
-        if self.pointer == self.memory.len() - 1 {
-            // note: overflow is a feature!
-            self.pointer = 0;
-            return;
-        }
-        self.pointer += 1;
-    }
-    pub fn get(&self) -> Result<u8, std::io::Error> {
-        if let Some(value) = self.memory[self.pointer] {
-            Ok(value)
-        } else {
-            Err(std::io::Error::new(
-                std::io::ErrorKind::Other,
-                "Memory set to None, you cannot read from it.",
-            ))
-        }
-    }
-    pub fn set(&mut self, value: u8) {
-        self.memory[self.pointer] = Some(value);
-    }
-    pub fn print(&self) {
-        if let Err(e) = std::io::stdout().write_all(&[self.get().unwrap()]) {
-            eprintln!("Error: {}", e);
-        }
-    }
-    pub fn input(&mut self) {
-        let mut buff: u8 = 0;
-        if let Err(e) = std::io::stdin().read_exact(std::slice::from_mut(&mut buff)) {
-            eprintln!("Error: {}", e);
-        }
-        self.set(buff);
     }
 }
