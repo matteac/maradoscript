@@ -11,8 +11,8 @@ Be cautious! It's possible to underflow or overflow both the memory and the poin
 
 ## Boundless Coding Realm
 
-Loops evade the code,
-Memory's dance knows no bounds,
+Loops evade the code,  
+Memory's dance knows no bounds,  
 Unfettered by loops.
 
 ## Instructions
