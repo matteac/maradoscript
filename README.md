@@ -9,9 +9,9 @@ If the pointer is at zero and you try to decrement it, it will go to the last by
 
 
 ## Instructions
-e - moves the pointer forward
-i - moves the pointer backward 
-m - increments the value at the pointer 
-a - decrements the value at the pointer
-👍 - outputs the value at the pointer to the stdout
-  (space) - inputs an ASCII character rom the stdin and stores it at the pointer
+- e - moves the pointer forward
+- i - moves the pointer backward 
+- m - increments the value at the pointer 
+- a - decrements the value at the pointer
+- 👍 - outputs the value at the pointer to the stdout
+-   (space) - inputs an ASCII character rom the stdin and stores it at the pointer
