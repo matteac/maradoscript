@@ -1,4 +1,7 @@
-![Logo](images/maradona.jpeg)
+<p align="center">
+  <img src="images/maradona.jpeg" alt="Logo">
+</p>
+
 
 
 
