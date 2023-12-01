@@ -14,7 +14,22 @@ If the pointer is at zero and you try to decrement it, it will go to the last by
 - m - increments the value at the pointer 
 - a - decrements the value at the pointer
 - 👍 - outputs the value at the pointer to the stdout
--   (space) - inputs an ASCII character rom the stdin and stores it at the pointer
+-   (space) - takes an ASCII character from the stdin and stores it at the pointer
+
+
+## Usage
+Clone the repo
+```shell
+git clone https://github.com/matteac/maradoscript.git
+```
+Build the project
+```shell
+cargo build --release
+```
+Run the project
+```shell
+cargo run --release -- -i <FILE>
+```
 
 ## Example
 This prints `Hello World\r\n`
