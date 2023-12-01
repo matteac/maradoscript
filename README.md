@@ -1,11 +1,7 @@
+# MaradoScript
 <p align="center">
   <img src="images/maradona.jpeg" alt="Logo">
 </p>
-
-
-
-
-# MaradoScript
 Inspired by Brainfuck and Maradona, written in Rust (btw)
 
 ## How it works
