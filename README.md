@@ -32,7 +32,7 @@ cargo run --release -- -i <FILE>
 ```
 
 ## Example
-This prints `Hello World\r\n`
+This prints `Hello World`
 ```
 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 👍e
